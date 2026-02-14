@@ -49,18 +49,30 @@ export default function RealtimeRoom({ presets, activePreset, userId, onResult }
     }, [roomData?.rouletteState?.isSpinning, roomData?.rouletteState?.result, onResult])
 
     const handleCreate = async () => {
-        if (!userId || !activePreset) return
+        if (!activePreset) {
+            setError('プリセットを選択してください')
+            return
+        }
+        if (!userId) {
+            setError('認証中です。しばらくお待ちください...')
+            return
+        }
         setError('')
-        const code = await createRoom(userId, activePreset)
-        if (code) {
-            setRoomCode(code)
-            setMode('host')
-            // リアルタイムリスナー開始
-            unsubRef.current = onRoomUpdate(code, (data) => {
-                setRoomData(data)
-            })
-        } else {
-            setError('ルームの作成に失敗しました')
+        try {
+            const code = await createRoom(userId, activePreset)
+            if (code) {
+                setRoomCode(code)
+                setMode('host')
+                // リアルタイムリスナー開始
+                unsubRef.current = onRoomUpdate(code, (data) => {
+                    setRoomData(data)
+                })
+            } else {
+                setError('ルームの作成に失敗しました')
+            }
+        } catch (e) {
+            console.error('[BiteVibes] Room create error:', e)
+            setError(`ルームの作成に失敗しました: ${e.message}`)
         }
     }
 

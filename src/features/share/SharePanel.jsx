@@ -105,7 +105,7 @@ export default function SharePanel({ presets, activePreset, onImport, isFirebase
                     onClick={handleGenerateLink}
                     id="share-generate-button"
                 >
-                    <Link size={18} />
+                    <Link size={15} />
                     共有リンクを生成
                 </button>
             </div>
@@ -127,7 +127,7 @@ export default function SharePanel({ presets, activePreset, onImport, isFirebase
                             onClick={handleCopy}
                             id="share-copy-button"
                         >
-                            {copied ? <Check size={18} /> : <Copy size={18} />}
+                            {copied ? <Check size={15} /> : <Copy size={15} />}
                             {copied ? 'コピー済み' : 'コピー'}
                         </button>
                     </div>
@@ -137,7 +137,7 @@ export default function SharePanel({ presets, activePreset, onImport, isFirebase
                             className="btn-secondary share-native-btn"
                             onClick={handleNativeShare}
                         >
-                            <ExternalLink size={16} />
+                            <ExternalLink size={14} />
                             他のアプリで共有
                         </button>
                     )}
@@ -147,7 +147,7 @@ export default function SharePanel({ presets, activePreset, onImport, isFirebase
             {/* Firebase未設定時の案内 */}
             {!isFirebaseConfigured && (
                 <div className="share-info glass-card">
-                    <CloudOff size={20} style={{ color: 'var(--color-text-muted)', flexShrink: 0 }} />
+                    <CloudOff size={16} style={{ color: 'var(--color-text-muted)', flexShrink: 0 }} />
                     <div>
                         <p className="share-info-title">URLベース共有が利用可能</p>
                         <p className="share-info-text">

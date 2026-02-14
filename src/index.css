@@ -124,6 +124,13 @@ body {
   }
 }
 
+@media (min-width: 768px) {
+  .app-main {
+    max-width: 680px;
+    padding: 0 32px 40px;
+  }
+}
+
 /* ===== Background — soft warm accent ===== */
 body::before {
   content: '';
@@ -157,6 +164,13 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .header-inner {
+    max-width: 680px;
+    padding: 0 32px;
+  }
 }
 
 .header-logo {

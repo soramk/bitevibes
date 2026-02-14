@@ -8,89 +8,166 @@
 }
 
 .share-header h2 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: var(--color-text-primary);
 }
 
 .share-header p {
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     color: var(--color-text-secondary);
     margin-top: 2px;
 }
 
-.share-card {
-    padding: 20px;
+/* Section card (glass-card) */
+.share-section {
+    padding: 16px;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 12px;
+}
+
+.share-result {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .share-label {
-    font-size: 0.68rem;
+    font-size: 0.65rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: var(--color-text-muted);
 }
 
-.share-url-box {
-    display: flex;
-    gap: 6px;
-}
-
-.share-url-input {
-    flex: 1;
+/* Select */
+.share-select {
+    font-size: 0.85rem;
     padding: 10px 14px;
-    background: var(--color-bg-secondary);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    color: var(--color-text-secondary);
-    font-family: monospace;
-    font-size: 0.72rem;
-    outline: none;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    min-height: 44px;
+    min-height: 40px;
 }
 
-.share-actions {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-}
-
+/* Preview */
 .share-preview {
-    padding: 16px;
+    padding: 12px;
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-md);
+}
+
+.share-preview-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
 }
 
 .share-preview-name {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     font-weight: 600;
     color: var(--color-text-primary);
-    margin-bottom: 10px;
+}
+
+.share-preview-count {
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    font-weight: 600;
 }
 
 .share-preview-items {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: 5px;
 }
 
 .share-preview-tag {
-    padding: 4px 10px;
-    font-size: 0.72rem;
-    font-weight: 600;
+    padding: 3px 8px;
+    font-size: 0.7rem;
+    font-weight: 500;
     color: var(--color-text-secondary);
-    background: var(--color-bg-secondary);
+    background: white;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-full);
 }
 
+/* Generate button */
+.share-generate-btn {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    align-self: flex-start;
+}
+
+/* URL container */
+.share-url-container {
+    display: flex;
+    gap: 8px;
+    align-items: stretch;
+}
+
+.share-url-input {
+    flex: 1;
+    padding: 8px 12px;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-secondary);
+    font-family: monospace;
+    font-size: 0.7rem;
+    outline: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-height: 40px;
+}
+
+/* Copy button */
+.share-copy-btn {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.share-copy-btn.copied {
+    background: var(--color-accent-success);
+    box-shadow: 0 3px 12px rgba(81, 207, 102, 0.25);
+}
+
+/* Native share button */
+.share-native-btn {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+    align-self: flex-start;
+}
+
+/* Info card */
+.share-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+    font-size: 0.8rem;
+}
+
+.share-info-title {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: 2px;
+}
+
+.share-info-text {
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+}
+
 .share-copy-feedback {
     color: var(--color-accent-success);
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     font-weight: 600;
     text-align: center;
     padding: 4px;

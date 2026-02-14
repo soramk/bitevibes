@@ -12,7 +12,7 @@ export default function RouletteWheel({ items, angle, isSpinning }) {
         const ctx = canvas.getContext('2d')
         const dpr = window.devicePixelRatio || 1
         const container = containerRef.current
-        const size = Math.min(container.clientWidth, 340)
+        const size = container.clientWidth
 
         canvas.width = size * dpr
         canvas.height = size * dpr
@@ -23,6 +23,8 @@ export default function RouletteWheel({ items, angle, isSpinning }) {
         const cx = size / 2
         const cy = size / 2
         const radius = size / 2 - 10
+        // Scale factor relative to base size (340px)
+        const scale = size / 340
 
         ctx.clearRect(0, 0, size, size)
 
@@ -69,7 +71,8 @@ export default function RouletteWheel({ items, angle, isSpinning }) {
             ctx.rotate(textAngle + Math.PI / 2)
 
             ctx.fillStyle = color.text
-            ctx.font = `700 ${Math.min(13, 110 / items.length)}px 'Outfit', sans-serif`
+            const baseFontSize = Math.min(13, 110 / items.length)
+            ctx.font = `700 ${Math.round(baseFontSize * scale)}px 'Outfit', sans-serif`
             ctx.textAlign = 'center'
             ctx.textBaseline = 'middle'
 
@@ -78,7 +81,7 @@ export default function RouletteWheel({ items, angle, isSpinning }) {
             ctx.shadowBlur = 2
             ctx.shadowOffsetY = 1
 
-            const maxLen = items.length > 6 ? 5 : 8
+            const maxLen = items.length > 6 ? Math.round(5 * scale) : Math.round(8 * scale)
             const displayName = item.name.length > maxLen
                 ? item.name.slice(0, maxLen) + '…'
                 : item.name
@@ -88,9 +91,10 @@ export default function RouletteWheel({ items, angle, isSpinning }) {
             ctx.restore()
         })
 
-        // Center circle — white
+        // Center circle — white (scaled)
+        const centerRadius = Math.round(22 * scale)
         ctx.beginPath()
-        ctx.arc(cx, cy, 22, 0, 2 * Math.PI)
+        ctx.arc(cx, cy, centerRadius, 0, 2 * Math.PI)
         ctx.fillStyle = '#ffffff'
         ctx.fill()
         ctx.shadowColor = 'rgba(0,0,0,0.1)'
@@ -103,7 +107,7 @@ export default function RouletteWheel({ items, angle, isSpinning }) {
 
         // Center BV text
         ctx.fillStyle = '#ff6b6b'
-        ctx.font = "800 11px 'Outfit', sans-serif"
+        ctx.font = `800 ${Math.round(11 * scale)}px 'Outfit', sans-serif`
         ctx.textAlign = 'center'
         ctx.textBaseline = 'middle'
         ctx.fillText('BV', cx, cy)
