@@ -1,0 +1,162 @@
+/* ===== Share Feature ===== */
+
+.share-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.share-header h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.share-header p {
+    font-size: 0.82rem;
+    color: var(--color-text-secondary);
+    margin-top: 2px;
+}
+
+.share-card {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.share-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+}
+
+.share-url-box {
+    display: flex;
+    gap: 6px;
+}
+
+.share-url-input {
+    flex: 1;
+    padding: 10px 14px;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-secondary);
+    font-family: monospace;
+    font-size: 0.72rem;
+    outline: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-height: 44px;
+}
+
+.share-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.share-preview {
+    padding: 16px;
+}
+
+.share-preview-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: 10px;
+}
+
+.share-preview-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.share-preview-tag {
+    padding: 4px 10px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+}
+
+.share-copy-feedback {
+    color: var(--color-accent-success);
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 4px;
+}
+
+/* ===== Import Dialog ===== */
+.import-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 20px;
+}
+
+.import-card {
+    max-width: 380px;
+    width: 100%;
+    padding: 28px 24px;
+}
+
+.import-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-lg);
+    background: rgba(255, 107, 107, 0.1);
+    color: var(--color-accent-primary);
+    margin: 0 auto 16px;
+}
+
+.import-card h3 {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 4px;
+}
+
+.import-card>p {
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-size: 0.82rem;
+    margin-bottom: 16px;
+}
+
+.import-preview {
+    padding: 14px;
+    margin-bottom: 20px;
+}
+
+.import-preview h4 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--color-text-primary);
+}
+
+.import-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}

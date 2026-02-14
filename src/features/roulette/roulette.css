@@ -1,0 +1,167 @@
+/* ===== Roulette Feature ===== */
+
+.roulette-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 16px;
+}
+
+.roulette-sound-toggle {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 8px;
+}
+
+/* Wheel */
+.roulette-wheel-container {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4px;
+}
+
+@media (min-width: 400px) {
+    .roulette-wheel-container {
+        max-width: 340px;
+    }
+}
+
+.roulette-canvas {
+    border-radius: 50%;
+    transition: filter 0.4s ease;
+    touch-action: none;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.roulette-canvas.spinning {
+    filter: drop-shadow(0 0 20px rgba(255, 107, 107, 0.2));
+}
+
+/* Pointer */
+.roulette-pointer {
+    position: absolute;
+    top: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+/* Controls */
+.roulette-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+}
+
+.roulette-spin-btn {
+    min-width: 160px;
+    padding: 14px 28px;
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+}
+
+@media (max-width: 380px) {
+    .roulette-spin-btn {
+        min-width: 140px;
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+}
+
+.roulette-spin-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.roulette-spin-btn.spinning {
+    animation: pulse-glow 1.5s ease-in-out infinite;
+}
+
+/* Result Overlay */
+.result-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 20px;
+}
+
+.result-card {
+    position: relative;
+    max-width: 340px;
+    width: 100%;
+    padding: 36px 24px;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+}
+
+.result-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+.result-icon {
+    color: var(--color-accent-secondary);
+    margin-bottom: 12px;
+    animation: icon-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes icon-pop {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.result-label {
+    color: var(--color-text-secondary);
+    font-size: 0.88rem;
+    margin-bottom: 6px;
+}
+
+.result-name {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    margin-bottom: 4px;
+}
+
+@media (max-width: 380px) {
+    .result-name {
+        font-size: 1.5rem;
+    }
+}
+
+.result-sub {
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Empty */
+.roulette-empty {
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 16px;
+}
