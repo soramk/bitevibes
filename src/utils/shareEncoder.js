@@ -62,7 +62,9 @@ export function getShareParam() {
 export function generateShareUrl(preset) {
     const encoded = encodePreset(preset)
     if (!encoded) return null
-    const url = new URL(window.location.origin)
+    // origin + pathname でサブディレクトリ（/bitevibes/）を含める
+    const base = window.location.origin + window.location.pathname
+    const url = new URL(base)
     url.searchParams.set('import', encoded)
     return url.toString()
 }

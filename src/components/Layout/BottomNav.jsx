@@ -1,10 +1,9 @@
-import { Disc3, UtensilsCrossed, Share2, Users } from 'lucide-react'
+import { Disc3, UtensilsCrossed, Share2 } from 'lucide-react'
 
 const navItems = [
     { id: 'roulette', label: 'ルーレット', icon: Disc3 },
     { id: 'menu', label: 'メニュー', icon: UtensilsCrossed },
     { id: 'share', label: '共有', icon: Share2 },
-    { id: 'room', label: 'ルーム', icon: Users },
 ]
 
 export default function BottomNav({ activeView, onViewChange }) {

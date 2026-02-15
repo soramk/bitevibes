@@ -6,7 +6,7 @@ import Roulette from './features/roulette/Roulette'
 import MenuManager from './features/menu/MenuManager'
 import PresetSelector from './features/menu/PresetSelector'
 import SharePanel from './features/share/SharePanel'
-import RealtimeRoom from './features/realtime/RealtimeRoom'
+
 import ImportDialog from './features/share/ImportDialog'
 import { useMenuStore } from './hooks/useMenuStore'
 import { getShareParam, decodePreset, clearShareParam } from './utils/shareEncoder'
@@ -122,17 +122,7 @@ export default function App() {
           </div>
         )}
 
-        {activeView === 'room' && (
-          <div className="animate-fade-in">
-            <RealtimeRoom
-              presets={filteredPresets}
-              activePreset={activePreset}
-              isFirebaseConfigured={fbConfigured}
-              userId={userId}
-              onResult={addHistoryEntry}
-            />
-          </div>
-        )}
+
       </main>
 
       <BottomNav activeView={activeView} onViewChange={setActiveView} />
