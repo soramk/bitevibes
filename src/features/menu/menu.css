@@ -45,8 +45,7 @@
     align-items: center;
     gap: 8px;
     padding: 10px 12px;
-    animation: slideUp var(--transition-normal) ease-out forwards;
-    opacity: 0;
+    animation: slideUp var(--transition-normal) ease-out both;
 }
 
 .menu-item.disabled {
